@@ -8,7 +8,7 @@ Implementation of BastiUi design in Flutter. (Inspired by [Aloïs Deniel impleme
 
 # Widgets & Methods
 
-## [`SmileyWidget`](smiley_ui/lib/src/smiley_widget.dart)
+## [`SmileyWidget`](lib/src/smiley_widget.dart)
 
 Base widget which draws an animated smiley.
 
@@ -25,7 +25,7 @@ SmileyWidget(
 
 <img src="smiley_ui/test/src/goldens/windows/smiley_widget.png" alt="SmileyWidget" width="750">
 
-## [`SmileysSelection`](smiley_ui/lib/src/smileys_selection.dart)
+## [`SmileysSelection`](lib/src/smileys_selection.dart)
 
 Widget which displays a list of smileys and allows selection. You can use the argument `expressions` to specify which smileys to display.
 
@@ -39,7 +39,7 @@ SmileysSelection();
 
 <img src="smiley_ui/test/src/goldens/windows/smileys_selection.png" alt="SmileysSelection" width="750">
 
-## [`SmileyBottomSheet`](smiley_ui/lib/src/smileys_bottom_sheet.dart)
+## [`SmileyBottomSheet`](lib/src/smileys_bottom_sheet.dart)
 
 Bottom sheet which contains the `SmileysSelection` widget. You can also display this widget with the method `showSmileysBottomSheet`.
 
@@ -55,7 +55,7 @@ showSmileysBottomSheet(context);
 
 <img src="assets/flutter_02.png" alt="SmileyBottomSheet" width="750">
 
-## [`SmileysDialog`](smiley_ui/lib/src/smileys_dialog.dart)
+## [`SmileysDialog`](lib/src/smileys_dialog.dart)
 
 Dialog which contains the `SmileysSelection` widget.
 
