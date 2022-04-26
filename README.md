@@ -8,7 +8,7 @@ Implementation of BastiUi design in Flutter. (Inspired by [Aloïs Deniel impleme
 
 # Widgets & Methods
 
-## [`SmileyWidget`](lib/challenge/smiley_widget.dart)
+## [`SmileyWidget`](smiley_ui/lib/src/smiley_widget.dart)
 
 Base widget which draws an animated smiley.
 
@@ -25,7 +25,7 @@ SmileyWidget(
 
 <img src="smiley_ui/test/src/goldens/windows/smiley_widget.png" alt="SmileyWidget" width="750">
 
-## [`SmileysSelection`](lib/challenge/smileys_selection.dart)
+## [`SmileysSelection`](smiley_ui/lib/src/smileys_selection.dart)
 
 Widget which displays a list of smileys and allows selection. You can use the argument `expressions` to specify which smileys to display.
 
@@ -39,7 +39,7 @@ SmileysSelection();
 
 <img src="smiley_ui/test/src/goldens/windows/smileys_selection.png" alt="SmileysSelection" width="750">
 
-## [`SmileyBottomSheet`](lib/challenge/smileys_bottom_sheet.dart)
+## [`SmileyBottomSheet`](smiley_ui/lib/src/smileys_bottom_sheet.dart)
 
 Bottom sheet which contains the `SmileysSelection` widget. You can also display this widget with the method `showSmileysBottomSheet`.
 
@@ -55,9 +55,14 @@ showSmileysBottomSheet(context);
 
 <img src="assets/flutter_02.png" alt="SmileyBottomSheet" width="750">
 
-* [`SmileysDialog`](lib/challenge/smileys_dialog.dart): Dialog which contains the `SmileysSelection` widget.
-    * You can also display this widget with the method `showSmileysDialog`.
-    * Supported parameters: `title`, `submitButtonText`, `cancelButtonText`, `submitButtonStyle` and `cancelButtonStyle`.
+## [`SmileysDialog`](smiley_ui/lib/src/smileys_dialog.dart)
+
+Dialog which contains the `SmileysSelection` widget.
+
+* You can also display this widget with the method `showSmileysDialog`.
+* Supported parameters: `title`, `submitButtonText`, `cancelButtonText`, `submitButtonStyle` and `cancelButtonStyle`.
+
+### Code Sample
 
 ```dart
 SmileysDialog();
@@ -65,7 +70,9 @@ SmileysDialog();
 showSmileysDialog(context);
 ```
 
-<img src="assets/flutter_03.png" alt="SmileyBottomSheet" width="600">
+### Screenshot
+
+<img src="assets/flutter_03.png" alt="SmileysDialog" width="750">
 
 ## Credits
 
