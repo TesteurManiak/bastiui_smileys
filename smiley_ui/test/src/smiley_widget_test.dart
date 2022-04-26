@@ -9,7 +9,7 @@ void main() {
       fileName: 'smiley_widget',
       pumpBeforeTest: (tester) async {
         for (int i = 0; i < 10; i++) {
-          await tester.pump();
+          await tester.pump(const Duration(seconds: 1));
         }
       },
       builder: () => GoldenTestGroup(
