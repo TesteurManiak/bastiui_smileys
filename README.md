@@ -23,7 +23,7 @@ SmileyWidget(
 
 ### Screenshot
 
-<img src="smiley_ui/test/src/goldens/windows/smiley_widget.png" alt="SmileyWidget" width="750">
+<img src="test/src/goldens/windows/smiley_widget.png" alt="SmileyWidget" width="750">
 
 ## [`SmileysSelection`](lib/src/smileys_selection.dart)
 
@@ -37,7 +37,7 @@ SmileysSelection();
 
 ### Screenshot
 
-<img src="smiley_ui/test/src/goldens/windows/smileys_selection.png" alt="SmileysSelection" width="750">
+<img src="test/src/goldens/windows/smileys_selection.png" alt="SmileysSelection" width="750">
 
 ## [`SmileyBottomSheet`](lib/src/smileys_bottom_sheet.dart)
 
