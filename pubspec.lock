@@ -114,6 +114,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smiley_ui:
+    dependency: "direct main"
+    description:
+      path: smiley_ui
+      relative: true
+    source: path
+    version: "0.0.1"
   source_span:
     dependency: transitive
     description:
@@ -172,3 +179,4 @@ packages:
     version: "2.1.1"
 sdks:
   dart: ">=2.16.2 <3.0.0"
+  flutter: ">=1.17.0"

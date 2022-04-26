@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'challenge/smileys_bottom_sheet.dart';
-import 'challenge/smileys_dialog.dart';
-import 'challenge/smileys_selection.dart';
+import 'package:smiley_ui/smiley_ui.dart';
 
 void main() => runApp(const MyApp());
 
