@@ -1,10 +1,20 @@
-# bastiui_smileys
+# smiley_ui
 
 Implementation of BastiUi design in Flutter. (Inspired by [Aloïs Deniel implementation](https://twitter.com/aloisdeniel/status/1518564668935217153))
 
 (I might make a package out of it at some point)
 
 ![](assets/smileys.gif)
+
+# Getting started
+
+Add the package by adding the following to your pubspec.yaml:
+
+```yaml
+smiley_ui:
+  git:
+    url: https://github.com/TesteurManiak/bastiui_smileys.git
+```
 
 # Widgets & Methods
 
