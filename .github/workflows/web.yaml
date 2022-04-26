@@ -4,18 +4,22 @@ on:
   push:
     branches: [ main ]
 
+defaults:
+  run:
+    working-directory: ./example
 jobs:
   build_web:
     name: Build Web
     runs-on: ubuntu-latest
     env:
       my_secret: ${{secrets.commit_secret}}
-      working-directory: ./example
     steps:
     - uses: actions/checkout@v2
     - uses: subosito/flutter-action@v1.5.3
-    - run: flutter packages get
-    - run: flutter build web --release --base-href "/smiley_ui_sample/"
+    - name: Install dependencies
+      run: flutter packages get
+    - name: Build web
+      run: flutter build web --release --base-href "/smiley_ui_sample/"
     - run: |
         cd build/web
         git init
