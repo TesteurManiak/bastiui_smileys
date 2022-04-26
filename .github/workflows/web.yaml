@@ -1,0 +1,28 @@
+name: Web build workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build_web:
+    name: Build Web
+    runs-on: ubuntu-latest
+    working-directory: example/
+    env:
+      my_secret: ${{secrets.commit_secret}}
+    steps:
+    - uses: actions/checkout@v2
+    - uses: subosito/flutter-action@v1.5.3
+    - run: flutter packages get
+    - run: flutter build web --release --base-href "/smiley_ui_sample/"
+    - run: |
+        cd build/web
+        git init
+        git config --global user.email rouxguillaume8@gmail.com 
+        git config --global user.name "Guillaume Roux"
+        git remote add origin https://${{secrets.commit_secret}}@github.com/TesteurManiak/bastiui_smileys.git
+        git checkout -b gh-pages
+        git add --all
+        git commit -m "update"
+        git push origin gh-pages -f
