@@ -19,8 +19,9 @@ jobs:
     - name: Install dependencies
       run: flutter packages get
     - name: Build web
-      run: flutter build web --release --base-href "/smiley_ui_sample/"
-    - run: |
+      run: flutter build web --release --base-href "/bastiui_smileys/"
+    - name: Publish
+      run: |
         cd build/web
         git init
         git config --global user.email rouxguillaume8@gmail.com 
