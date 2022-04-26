@@ -6,16 +6,26 @@ import 'smiley_expression.dart';
 const kDefaultSmileySize = 56.0;
 
 class SmileyWidget extends StatefulWidget {
-  final double size;
+  /// The expression of the smiley.
   final SmileyExpression expression;
-  final bool isSelected;
-  final bool isEnabled;
-  final void Function()? onSelected;
 
+  /// Selection state of the widget. By default it is `false`.
+  ///
+  /// If `true` the widget will be drawn with a white border.
+  final bool isSelected;
+
+  /// Define if the widget is enabled or not. By default it is `true`.
+  ///
+  /// If `false` the widget will be drawn with a `0.5` opacity.
+  final bool isEnabled;
+
+  /// Callback triggered when the widget is tapped on.
+  final VoidCallback? onSelected;
+
+  /// Create a widget which draws an animated smiley face.
   const SmileyWidget({
     Key? key,
     required this.expression,
-    this.size = kDefaultSmileySize,
     this.isSelected = false,
     this.isEnabled = true,
     this.onSelected,
@@ -70,8 +80,10 @@ class _SmileyWidgetState extends State<SmileyWidget>
             color: Colors.white,
             shape: BoxShape.circle,
           ),
-          height: widget.isSelected ? widget.size * 1.2 : widget.size,
-          width: widget.isSelected ? widget.size * 1.2 : widget.size,
+          height:
+              widget.isSelected ? kDefaultSmileySize * 1.2 : kDefaultSmileySize,
+          width:
+              widget.isSelected ? kDefaultSmileySize * 1.2 : kDefaultSmileySize,
           alignment: Alignment.center,
           child: GestureDetector(
             onTap: widget.onSelected,
@@ -79,8 +91,8 @@ class _SmileyWidgetState extends State<SmileyWidget>
               clipBehavior: Clip.none,
               children: [
                 Container(
-                  width: widget.size,
-                  height: widget.size,
+                  width: kDefaultSmileySize,
+                  height: kDefaultSmileySize,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: widget.expression.color,
@@ -107,11 +119,11 @@ class _SmileyWidgetState extends State<SmileyWidget>
                   ),
                 ),
                 AnimatedPositioned(
-                  height: widget.size,
-                  width: widget.size,
+                  height: kDefaultSmileySize,
+                  width: kDefaultSmileySize,
                   top: widget.expression.topPos,
                   right: _isHovering || widget.isSelected
-                      ? widget.size / 2 -
+                      ? kDefaultSmileySize / 2 -
                           widget.expression.rightPos *
                               (_isVeryHappy ? 1.4 : 1.8)
                       : widget.expression.rightPos,

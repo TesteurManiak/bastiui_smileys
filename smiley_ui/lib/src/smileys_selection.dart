@@ -16,12 +16,13 @@ typedef SmileySelectionCallback = void Function(
 );
 
 class SmileysSelection extends StatefulWidget {
+  /// List of smiley expressions to display.
   final List<SmileyExpression> expressions;
 
   /// Callback called when the user selects or unselect a smiley.
   final SmileySelectionCallback? onSmileySelected;
 
-  /// Provide a widget containing the smiley's expressions.
+  /// Create a widget which displays a list of smileys and allows selection.
   const SmileysSelection({
     Key? key,
     this.expressions = kDefaultSmileyExpressions,
