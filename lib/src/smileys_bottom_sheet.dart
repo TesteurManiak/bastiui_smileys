@@ -5,18 +5,28 @@ import 'smileys_selection.dart';
 
 const _kDefaultTitle = 'How was your experience?';
 const _kDefaultSubmitText = 'Submit';
-const _kDefaultCancelText = 'Cancel';
 
 class SmileysBottomSheet extends StatefulWidget {
+  /// Title of the bottom sheet.
+  ///
+  /// By default, the title is `"How was your experience?"`.
+  ///
+  /// Its [TextStyle] is based on the value of [ThemeData.textTheme.headline6].
   final String? title;
+
+  /// Text that will be used for the submit button.
+  ///
+  /// By default, the submit button text is `"Submit"`.
   final String? submitButtonText;
-  final String? cancelButtonText;
+
+  /// [ButtonStyle] used for the submit button.
+  final ButtonStyle? submitButtonStyle;
 
   const SmileysBottomSheet({
     Key? key,
     this.title,
     this.submitButtonText,
-    this.cancelButtonText,
+    this.submitButtonStyle,
   }) : super(key: key);
 
   @override
@@ -36,19 +46,27 @@ class _SmileysBottomSheetState extends State<SmileysBottomSheet> {
   Widget build(BuildContext context) {
     final title = widget.title ?? _kDefaultTitle;
     final submitButtonText = widget.submitButtonText ?? _kDefaultSubmitText;
-    final cancelButtonText = widget.cancelButtonText ?? _kDefaultCancelText;
 
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
-          Text(title),
-          const SizedBox(height: 8),
+          Align(
+            alignment: Alignment.topLeft,
+            child: IconButton(
+              icon: const Icon(Icons.close_rounded),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: Text(title, style: Theme.of(context).textTheme.headline6),
+          ),
           SmileysSelection(
             onSmileySelected: (smileySelected) =>
                 _selectedExpression.value = smileySelected,
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 16),
           ValueListenableBuilder<SmileyExpression?>(
             valueListenable: _selectedExpression,
             builder: (context, selectedExpression, _) {
@@ -56,13 +74,10 @@ class _SmileysBottomSheetState extends State<SmileysBottomSheet> {
                 onPressed: selectedExpression != null
                     ? () => Navigator.pop(context, selectedExpression)
                     : null,
+                style: widget.submitButtonStyle,
                 child: Text(submitButtonText),
               );
             },
-          ),
-          TextButton(
-            child: Text(cancelButtonText),
-            onPressed: () => Navigator.pop(context),
           ),
         ],
       ),
@@ -70,9 +85,20 @@ class _SmileysBottomSheetState extends State<SmileysBottomSheet> {
   }
 }
 
-Future<SmileyExpression?> showSmileysBottomSheet(BuildContext context) {
+/// Shows a modal bottom sheet that contains a [SmileysBottomSheet].
+Future<SmileyExpression?> showSmileysBottomSheet(
+  BuildContext context, {
+  String? title,
+  String? submitButtonText,
+}) {
   return showModalBottomSheet<SmileyExpression?>(
     context: context,
-    builder: (_) => const SmileysBottomSheet(),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+    ),
+    builder: (_) => SmileysBottomSheet(
+      title: title,
+      submitButtonText: submitButtonText,
+    ),
   );
 }

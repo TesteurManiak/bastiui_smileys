@@ -60,7 +60,7 @@ class _SmileysSelectionState extends State<SmileysSelection> {
             expression: expression,
             isSelected: _selectedExpression == expression,
             isEnabled: _selectedExpression == null,
-            onSelected: () => _onSmileyTapped(expression),
+            onTap: () => _onSmileyTapped(expression),
           );
         }).toList(),
       ),

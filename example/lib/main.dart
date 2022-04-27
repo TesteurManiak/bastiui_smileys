@@ -31,11 +31,12 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             const SmileysSelection(),
+            const SizedBox(height: 8),
             ElevatedButton(
               onPressed: () => showSmileysBottomSheet(context),
               child: const Text('Show bottom sheet'),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 8),
             ElevatedButton(
               onPressed: () => showSmileysDialog(context),
               child: const Text('Show dialog'),

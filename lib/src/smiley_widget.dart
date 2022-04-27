@@ -20,7 +20,7 @@ class SmileyWidget extends StatefulWidget {
   final bool isEnabled;
 
   /// Callback triggered when the widget is tapped on.
-  final VoidCallback? onSelected;
+  final VoidCallback? onTap;
 
   /// Create a widget which draws an animated smiley face.
   const SmileyWidget({
@@ -28,7 +28,7 @@ class SmileyWidget extends StatefulWidget {
     required this.expression,
     this.isSelected = false,
     this.isEnabled = true,
-    this.onSelected,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -86,7 +86,7 @@ class _SmileyWidgetState extends State<SmileyWidget>
               widget.isSelected ? kDefaultSmileySize * 1.2 : kDefaultSmileySize,
           alignment: Alignment.center,
           child: GestureDetector(
-            onTap: widget.onSelected,
+            onTap: widget.onTap,
             child: Stack(
               clipBehavior: Clip.none,
               children: [
