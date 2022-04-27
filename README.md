@@ -17,7 +17,7 @@ smiley_ui:
     ref: main # Optional, use it if you want a specific branch or tag.
 ```
 
-# Widgets & Methods
+# Documentation
 
 ## [`SmileyWidget`](lib/src/smiley_widget.dart)
 
@@ -63,7 +63,9 @@ SmileysSelection();
 
 ## [`SmileyBottomSheet`](lib/src/smileys_bottom_sheet.dart)
 
-Bottom sheet which contains the `SmileysSelection` widget.
+Widget to use as the content of a bottom sheet.
+
+This widget will display the `SmileysSelection` widget alongside a title and a submit button which will be disabled while the user did not select a smiley.
 
 ### Code Sample
 
@@ -77,6 +79,12 @@ showSmileysBottomSheet(context);
 ### Screenshot
 
 <img src="assets/flutter_02.png" alt="SmileyBottomSheet" height="500">
+
+### Supported Parameters
+
+* `title`: Title of the bottom sheet.
+* `submitButtonText`: Text that will be used for the submit button.
+* `submitButtonStyle`: `ButtonStyle` used for the submit button.
 
 ## [`SmileysDialog`](lib/src/smileys_dialog.dart)
 

@@ -1,8 +1,10 @@
 name: Web build workflow
 
 on:
-  push:
-    branches: [ main ]
+  workflow_run:
+    workflows: Test workflow
+    branches: main
+    types: completed
 
 defaults:
   run:

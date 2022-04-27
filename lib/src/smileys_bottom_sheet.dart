@@ -22,6 +22,11 @@ class SmileysBottomSheet extends StatefulWidget {
   /// [ButtonStyle] used for the submit button.
   final ButtonStyle? submitButtonStyle;
 
+  /// Widget to use as the content of a bottom sheet.
+  ///
+  /// This widget will display the [SmileysSelection] widget alongside a title
+  /// and a submit button which will be disabled while the user did not select
+  /// a smiley.
   const SmileysBottomSheet({
     Key? key,
     this.title,
