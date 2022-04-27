@@ -6,6 +6,8 @@ Implementation of BastiUi design in Flutter. (Inspired by [Aloïs Deniel impleme
 
 ![](assets/smileys.gif)
 
+[Try the demo](https://rouxguillau.me/bastiui_smileys/#/)
+
 # Getting started
 
 Add the package by adding the following to your pubspec.yaml:
