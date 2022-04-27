@@ -1,5 +1,9 @@
 # smiley_ui
 
+[![GitHub stars](https://img.shields.io/github/stars/TesteurManiak/bastiui_smileys)](https://github.com/TesteurManiak/bastiui_smileys/stargazers)
+[![GitHub license](https://img.shields.io/github/license/TesteurManiak/bastiui_smileys)](https://github.com/TesteurManiak/bastiui_smileys/blob/main/LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/TesteurManiak/bastiui_smileys/badge.svg?branch=main)](https://coveralls.io/github/TesteurManiak/bastiui_smileys?branch=main)
+
 Implementation of BastiUi design in Flutter. (Inspired by [Aloïs Deniel implementation](https://twitter.com/aloisdeniel/status/1518564668935217153))
 
 ![](assets/smileys.gif)
