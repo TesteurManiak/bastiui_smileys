@@ -19,7 +19,7 @@ class SmileysSelection extends StatefulWidget {
   /// List of smiley expressions to display.
   final List<SmileyExpression> expressions;
 
-  /// Callback called when the user selects or unselect a smiley.
+  /// Callback triggered when the user selects or unselect a smiley.
   final SmileySelectionCallback? onSmileySelected;
 
   /// Create a widget which displays a list of smileys and allows selection.
